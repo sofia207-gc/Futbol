@@ -10,7 +10,7 @@ const ListarPresi:React.FC=()=>{
      const navigate= useNavigate();
     const [mensaje,setMensaje]=useState<Presiden[]>([])
     const listar= async()=>{
-        const res=await fetch('http://localhost:1111/presidentes')
+        const res=await fetch('http://localhost:3333/presidentes')
         const msj=await res.json()
         console.log(msj)
         setMensaje(msj.mensaje)
@@ -20,7 +20,7 @@ const ListarPresi:React.FC=()=>{
     if (!seguro) {
         return;
     }
-        const respE= await fetch(`http://localhost:1111/presidentes/${id}`,{
+        const respE= await fetch(`http://localhost:3333/presidentes/${id}`,{
             method:'DELETE'
         })
         const msjE=await respE.json()
